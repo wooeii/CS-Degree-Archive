@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko"> <!-- 문서 타입 선언 및 한국어 설정 -->
+<head>
+    <title>선거 후보 목록</title> <!-- 페이지 제목 -->
+    <!-- CSS 스타일시트 연결 -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h2>선거 후보 목록</h2> <!-- 페이지 헤더 -->
+
+    <!-- 선거구 필터링 폼 -->
+    <form method="get" action="/filter"> <!-- GET 메서드로 필터링 요청 -->
+        <label for="election_area">선거구 필터:</label> <!-- 선거구 필터링 레이블 -->
+        <select name="election_area" id="election_area"> <!-- 드롭다운 선택 메뉴 -->
+            <!-- 각 선거구를 옵션으로 제공 -->
+            <option value="용인시갑">용인시갑</option>
+            <option value="용인시을">용인시을</option>
+            <option value="용인시병">용인시병</option>
+            <option value="용인시정">용인시정</option>
+        </select>
+        <button type="submit">필터링</button> <!-- 필터링 버튼 -->
+    </form>
+
+    <!-- 후보 목록을 표시하는 테이블 -->
+    <table border="1"> <!-- 테두리가 있는 테이블 -->
+        <thead>
+            <tr>
+                <!-- 테이블 헤더 -->
+                <th>고유번호</th> <!-- 후보 고유번호 -->
+                <th>선거구명</th> <!-- 선거구명 -->
+                <th>구시군명</th> <!-- 구/시/군명 -->
+                <th>후보자 이름</th> <!-- 후보자 이름 -->
+                <th>득표수</th> <!-- 득표수 -->
+                <th>득표율</th> <!-- 득표율 -->
+                <th>상세보기</th> <!-- 상세보기 링크 -->
+            </tr>
+        </thead>
+        <tbody>
+            <!-- 서버에서 전달받은 후보 목록을 동적으로 렌더링 -->
+            {% for row in election_list %}
+            <tr>
+                <td>{{ row[0] }}</td> <!-- 후보 고유번호 -->
+                <td>{{ row[1] }}</td> <!-- 선거구명 -->
+                <td>{{ row[2] }}</td> <!-- 구/시/군명 -->
+                <td>{{ row[3] }}</td> <!-- 후보자 이름 -->
+                <td>{{ row[4] }}</td> <!-- 득표수 -->
+                <td>{{ row[5] }}%</td> <!-- 득표율 -->
+                <!-- 상세보기 링크: 고유번호를 매개변수로 전달 -->
+                <td><a href="/view?id={{ row[0] }}">상세보기</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <!-- JavaScript 파일 연결 -->
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

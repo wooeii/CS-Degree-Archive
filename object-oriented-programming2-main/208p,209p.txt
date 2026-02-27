@@ -1,0 +1,50 @@
+3. 직원을 나타내는 Employee 클래스를 다음의 단계에 따라서 작성하여 보자.
+1.) name, age, salary, years 등을 멤버 변수로 가지는 클래스를 정의한다.
+2.) 모든 멤버 변수를 private로 정의하고 접근자와 설정자를 제공하라.
+3.) Employee 클래스의 객체를 생성하고 설정자를 통하여 {“홍길동”,26,1000000,1}으로 설정하고 접근자를 이용하여서 멤버 변수의 값을 화면에 출력한다.
+
+#include <iostream>
+
+using namespace std;
+
+class Employee
+{
+	string name;
+	int age, salary, years;
+public:
+	void alpha(string, int, int, int);
+	void print();
+};
+
+void Employee::alpha(string a, int b, int c, int d)
+{
+	name = a;
+	age = b;
+	salary = c;
+	years = d;
+}
+void Employee::print()
+{
+	cout << name << " " << age << " " << salary << " " << years << endl;
+}
+int main()
+{
+	Employee a;
+	a.alpha("홍길동", 26, 1000000, 1);
+	a.print();
+}
+
+
+
+
+4. 다음의 은행 업무를 기술한 문장을 읽고 클래스의 후보를 생각하여 보자.
+
+은행은 정기 예금과 보통 예금 업무를 제공한다. 고객들은 자신의 계좌에 돈을 입금할 수 있으며 계좌에서 돈을 인출할 수 있다. 그리고 각 계좌는 기간에 따라 이자를 지급한다. 계좌마다 이자는 달라진다.
+
+1) 이 문제 영역 기술 문서를 읽고 잠재적인 클래스 후보를 찾아보라. 참고로 업무 기술서의 문장에 등장하는 명사가 클래스의 후보가 된다.
+정기 예금과 보통 예금 
+2) 이 문제를 해결하는 데 필요한 클래스만을 선별하여 보자.
+정기 예금 클래스와 보통 예금 클래스 
+3) 각 클래스에 필요한 멤버 변수와 멤버 함수를 생각하여 보자.
+멤버 함수: 입금과 출금
+멤버 변수: 기간과 이자, 돈 

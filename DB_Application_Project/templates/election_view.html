@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko"> <!-- 문서 유형 선언 및 한국어 설정 -->
+<head>
+    <title>후보자 상세 정보</title> <!-- 페이지 제목 -->
+    <!-- CSS 스타일시트 연결 -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h2>후보자 상세 정보</h2> <!-- 페이지 헤더 제목 -->
+
+    <!-- 후보자 정보를 표시하는 테이블 -->
+    <table border="1"> <!-- 테이블 테두리 설정 -->
+        <!-- 각 행은 후보자 정보의 세부 사항을 보여줌 -->
+        <tr><td>고유번호</td><td>{{ candidate[0] }}</td></tr> <!-- 후보 고유번호 -->
+        <tr><td>선거구명</td><td>{{ candidate[1] }}</td></tr> <!-- 선거구 이름 -->
+        <tr><td>구시군명</td><td>{{ candidate[2] }}</td></tr> <!-- 구/시/군 이름 -->
+        <tr><td>총 선거인 수</td><td>{{ candidate[3] }}</td></tr> <!-- 총 선거인 수 -->
+        <tr><td>투표자 수</td><td>{{ candidate[4] }}</td></tr> <!-- 투표자 수 -->
+        <tr><td>후보자 이름</td><td>{{ candidate[5] }}</td></tr> <!-- 후보자 이름 -->
+        <tr><td>득표수</td><td>{{ candidate[6] }}</td></tr> <!-- 후보자 득표 수 -->
+        <tr><td>득표율</td><td>{{ candidate[7] }}%</td></tr> <!-- 후보자 득표율 (백분율 표시 추가) -->
+        <tr><td>무효 투표 수</td><td>{{ candidate[8] }}</td></tr> <!-- 무효 투표 수 -->
+        <tr><td>기권 수</td><td>{{ candidate[9] }}</td></tr> <!-- 기권 수 -->
+    </table>
+
+    <!-- 홈으로 돌아가는 링크 -->
+    <a href="/">목록으로 돌아가기</a>
+
+    <!-- JavaScript 파일 연결 -->
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

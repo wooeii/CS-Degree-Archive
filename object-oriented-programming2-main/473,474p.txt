@@ -1,0 +1,60 @@
+8. 클래스 Human을 정의하여 보자. 다음과 같은 멤버 변수를 정의한다.
+
+class Human {
+	string name;
+	int age;
+public:
+	Human(string name, int age) {
+		...//매개변수의 값으로 멤버 변수를 초기화한다.
+	}
+};
+
+1. 각 멤버 변수에 대하여 접근자와 설정자를 작성하여 보자.
+
+class Human {
+	string name;
+	int age;
+public:
+	Human(string name, int age) :name(name),age(age){}
+	void setvalue(string a, int b) { name = a, age = b; }
+	string getname() { return name; }
+	int getage() { return age; }
+};
+
+
+2. 객체의 현재 상태를 콘솔에 출력하는 print()를 작성하여 보자.
+
+void Human::print()
+{
+	cout << "이름: " << name << ", 나이: " << age << endl;
+}
+
+3. main() 함수 안에서 (“춘향”,18세),(“몽룡”,21세),(“사또”,50세)에 해당하는 Human 객체를 생성하여 보라. 각 객체의 print()를 호출하여 보라.
+
+int main()
+{
+	Human a("춘향", 18), b("몽룡", 21), c("사또", 50);
+	a.print();
+	b.print();
+	c.print();
+}
+
+4. 클래스 Human을 상속하여서 Student 클래스를 작성하여 보자. string major; 멤버 변수가 추가된다.
+
+class Student :public Human {
+	string major;
+};
+
+5. 다음과 같은 생성자를 정의하여 보자. 부모 클래스의 생성자를 호출하여 보자.
+
+Student(string name, int age, string major)_____________________
+{
+	...//매개 변수의 값으로 멤버 변수를 초기화한다.
+}
+
+
+class Student :public Human {
+	string major;
+	Student(string name, int age, string major) :Human(name,age), major(major){}
+};
+
