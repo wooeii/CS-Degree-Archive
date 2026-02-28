@@ -1,4 +1,11 @@
-로컬 저장소 데이터 유실로 인해 소스 코드 미탑재  
-컴퓨터구조: 파이프라인 설계, 캐시 메모리 구조 및 ISA 설계 원리 학습  
-초고속 컴퓨팅: 병렬 컴퓨팅 알고리즘, MPI/OpenMP 및 성능 최적화 기법 실습  
-코드 파일은 소실되었으나, 해당 과목들을 통해 하드웨어와 소프트웨어 간의 최적화 메커니즘을 깊이 있게 이해함
+# 🎓 CS-Degree-Archive  
+  
+컴퓨터공학과 학부 과정 중 수강한 핵심 전공 과목들의 과제 및 실습 코드 아카이브입니다.   
+  
+## 📁 Repository Structure  
+* `Algorithm_Analysis`: 알고리즘 분석 및 구현 실습  
+* `DB_Application_Project`: 데이터베이스 설계 및 SQL 응용  
+* `data_structure`: C/C++ 기반 핵심 자료구조 구현  
+* `computer_network`: 네트워크 통신 및 소켓 프로그래밍 기초  
+* `object-oriented-programming2`: 객체지향 프로그래밍 패러다임 실습  
+* `web_programming`: 웹 프로그래밍 기초 실습  
